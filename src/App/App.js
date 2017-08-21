@@ -4,7 +4,7 @@ class Main extends Component {
     render() {
         return (
             <div>
-                HELLO THIS IS THE MAIN BIT
+                lets make this responsive PoW
             </div>
         );
     }
