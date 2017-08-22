@@ -1,0 +1,62 @@
+//Import Reset File to set evverything to default in all browsers;
+@import './reset.scss';
+
+$actionbar-height:64px;
+$nav-height:64px;
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    height:100%;
+    
+}
+
+body{
+    background:#ccc;
+    height:100%;    
+}
+
+.action-bar{
+    width:100%;
+    background:lighten(red,10);
+    height:64px;
+    position:fixed;   
+    top:0;
+}
+
+.main-content{
+    position: relative;
+    background:pink;   
+    z-index:-1;
+    margin: $actionbar-height auto $nav-height auto;
+    padding:5%;
+    width:85%;    
+    
+}
+
+.nav-bar{
+    width:100%;    
+    height: 64px;
+    position: fixed;
+    bottom:0;
+    left:0;   
+}
+
+@media only screen and(min-width:1080px){
+
+    .action-bar{
+        width:50%;
+        left:25%;
+    }
+
+    .main-content{
+        width:50%;
+    }
+
+    .nav-bar{
+        width:50%;
+        left:25%;
+    }
+}
