@@ -1,0 +1,128 @@
+// //Import Reset File to set evverything to default in all browsers;
+@import './reset.scss';
+$actionbar-height:64px;
+$nav-height:64px;
+* {
+    box-sizing: border-box;
+    color: white;
+}
+
+html,
+body,
+.app,
+#app {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: #111;
+}
+
+.app {
+    display: flex;
+    flex-flow: column;
+}
+
+.action-bar {
+    min-height: $actionbar-height;
+}
+
+.main-content {
+    flex: 1;;
+    overflow-y: auto;
+    width: 100%;
+    // min-height: 0;
+    display:flex;
+}
+
+.profiles{
+    flex:1;
+    padding:5px;
+    border:2px solid rgba(56,56,56,0.5);
+    
+}
+
+.leftSide {
+    display: none;
+}
+
+.social {
+    display: none;
+}
+
+
+
+.nav-bar {
+    position: fixed;
+    bottom:0;
+    width:100%;
+    background: blue;
+    min-height: $nav-height;
+}
+
+@media only screen and(min-width:1080px) {
+    
+    .main-content {        
+        display: flex;
+        margin: auto;
+        flex-flow: row;       
+    }
+    .leftSide {     
+        position: relative;
+        display: block;
+        width:250px;        
+        // display: flex;  
+        // align-items: center;
+
+        .leftSideBit{
+            position: -webkit-sticky;
+            position: -moz-sticky;
+            position: -ms-sticky;
+            position: -o-sticky;
+            position: sticky;
+            width:50%;
+            top:50%;            
+            text-align: center;
+            margin:auto;            
+            background: blue;
+        }
+
+    }
+    .profiles {
+        flex: 1; 
+    }
+    .social {
+        position: relative;              
+        width:250px;
+        display: block;  
+
+       
+
+            .socialbit{
+                position: -webkit-sticky;
+                position: -moz-sticky;
+                position: -ms-sticky;
+                position: -o-sticky;
+                position: sticky;
+                width:50%;
+                top:50%;            
+                text-align: center;
+                margin:auto;            
+                background: red;
+                
+            }
+        
+        
+        
+        
+    }
+    .app {
+        box-shadow: -12px 12px 20px 1px rgba(80, 80, 80, 0.4);
+        border-right: 2px solid rgba(80, 80, 80, 0.4); // box-shadow: -27px 27px 20px -20px rgba(120,120,120,0.4);    
+        // transition: all 0.3s ease-in-out;
+    } // .app:hover{
+    //     box-shadow:-17px 17px 10px -10px rgba(120,120,120,0.3);
+    //     transform: translate(-1px, 2px);
+    // }
+}

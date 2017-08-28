@@ -3,7 +3,7 @@ import React from 'react';
 
 const FacebookIcon = (props) => {
 
-    let backgroundColor = props.selectedIndex === props.id ? "#7BAFE4" : "#606060";
+    let backgroundColor = props.selectedIndex === props.index ? "#7BAFE4" : "#606060";
     let width = props.width ? props.width : "30px";
     let height = width;
     let outLineColor = props.color ? props.color : "#ccc";

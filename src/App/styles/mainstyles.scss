@@ -1,62 +1,106 @@
-//Import Reset File to set evverything to default in all browsers;
 @import './reset.scss';
+* {
+    box-sizing: border-box;
+    color: white;
+}
 
-$actionbar-height:64px;
-$nav-height:64px;
-
-*{
+$actionbar-height: 64px;
+$navbar-height: 64px;
+$side-panel-width:200px;
+* {
     box-sizing: border-box;
 }
 
-html{
-    height:100%;
-    
+html,
+body,
+#app {
+    height: 100%;
+    color: white;
 }
 
-body{
-    background:#ccc;
-    height:100%;    
+.app {
+    height: 100%;
+    background: #111;
+    display: flex;
+    flex-direction: column;
 }
 
-.action-bar{
-    width:100%;
-    background:lighten(red,10);
-    height:64px;
-    position:fixed;   
-    top:0;
+.action-bar {
+    min-height: $actionbar-height;
+    height: $actionbar-height;
+    max-height: $actionbar-height;
 }
 
-.main-content{
-    position: relative;
-    background:pink;   
-    z-index:-1;
-    margin: $actionbar-height auto $nav-height auto;
-    padding:5%;
-    width:85%;    
-    
+.nav-bar {
+    min-height: $navbar-height;
+    height: $navbar-height;
+    max-height: $navbar-height;
 }
 
-.nav-bar{
-    width:100%;    
-    height: 64px;
-    position: fixed;
-    bottom:0;
-    left:0;   
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: stretch;
 }
 
-@media only screen and(min-width:1080px){
+.center {
+    padding:10px;
+    flex: 1;
+    overflow-y: auto;
+}
 
-    .action-bar{
-        width:50%;
-        left:25%;
+.center::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #262228;
+    border-radius: 10px;
+}
+
+.center::-webkit-scrollbar {
+    width: 10px;
+    background-color: #262228;
+}
+
+.center::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: lighten(#262228, 8);
+}
+
+//Could Hide
+.side {
+    display: none;
+    order: 2;
+    background: pink;
+}
+
+@media screen and (min-width:750px) and (max-width:1020px){
+    .center{
+        margin:0 10% 0 10%;
     }
+}
 
-    .main-content{
-        width:50%;
+@media screen and (min-width:1020px) {
+    .main-content {
+        flex-direction: row;
     }
-
-    .nav-bar{
-        width:50%;
-        left:25%;
+    .social {
+        width: 100%;
+        background: red;
+    }
+    .side {
+        background: blue;
+        position: relative;
+        order: inherit;
+        width: $side-panel-width;
+        display: block;
+    }
+    .left {
+        order: 1;
+    }
+    .right {
+        order: 3;
+    }
+    .center {
+        flex: 1;
     }
 }

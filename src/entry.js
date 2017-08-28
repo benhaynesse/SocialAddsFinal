@@ -3,14 +3,19 @@ import ReactDOM from 'react-dom';
 
 //Import Store and Redux
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
 //Import Reducer
 import reducer from './App/reducers'
 
-//Create Global store for redux
-const store = createStore(reducer, applyMiddleware(thunk));
+//Set Up Reux Debigger In browser
+//Apply Middleware THUnk for async operations.
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducer, /* preloadedState, */ composeEnhancers(
+    applyMiddleware(thunk)
+  ));
 
 //Import Material UI Stuff
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -42,6 +47,8 @@ const muiTheme = getMuiTheme(darkBaseTheme, {
 });
 
 //Import the App
+// import Test from './App/Test.jsx';
+
 import App from './App/App.jsx';
 
 //Render The App, Add the store.
