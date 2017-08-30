@@ -18,8 +18,7 @@ class Navbar extends Component {
 
     render() {
       
-        let items = this.props.items.map((item,index) => {
-            
+        let items = this.props.items.map((item,index) => {            
             
             return (
             <NavLink key={"nv"+index} style={{'textAlign':'center'}} to={item.location}>

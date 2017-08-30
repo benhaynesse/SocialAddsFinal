@@ -29,18 +29,19 @@ import { INSTAGRAM_TAB_ID, SNAPCHAT_TAB_ID, ALL_TAB_ID } from './constants/index
 const HOCRoute = ({ component, ...rest }) => {
 
     return (
-        <Route {...rest} render={routeProps => {
-            return <HOCPage {...rest}>{React.createElement(component)}</HOCPage>
+        <Route {...rest} render={routeProps => {         
+            let props = {toggled:rest.toggled}   
+            return <HOCPage {...rest}>{ React.createElement(component,props)}</HOCPage>
         }} />
     );
 }
 
-const MainBody = () => (
+const MainBody = (props) => (
 
     <Switch>
-        <HOCRoute id={ALL_TAB_ID} path="/" exact component={AllProfiles} />
-        <HOCRoute id={ALL_TAB_ID} path="/all" exact component={AllProfiles} />
-        <HOCRoute id={SNAPCHAT_TAB_ID} path="/snapchat" component={SnapchatProfiles} />
+        <HOCRoute toggled={props.toggledState} id={ALL_TAB_ID} path="/" exact component={AllProfiles} />
+        <HOCRoute toggled={props.toggledState} id={ALL_TAB_ID} path="/all" exact component={AllProfiles} />
+        <HOCRoute toggled={props.toggledState} id={SNAPCHAT_TAB_ID} path="/snapchat" component={SnapchatProfiles} />
         <HOCRoute id={INSTAGRAM_TAB_ID} path="/instagram" component={InstagramProfiles} />
         <Route path="*" component={NotFoundPage} />
     </Switch>
@@ -59,11 +60,20 @@ class App extends Component {
 
     constructor() {
         super(); 
+        this.state = {
+            toggledTab:true
+        }
     }
 
     selectTab(index) {
         this.setState({
             selectedIndex: index
+        })
+    }
+
+    handleToggle(state){
+        this.setState({
+            toggledTab:state
         })
     }
 
@@ -76,13 +86,15 @@ class App extends Component {
                     <header className="action-bar">
                         <ActionBar />
                     </header>
-                    <ToggleBar/>
+                    <section className="toggle-bar">
+                        <ToggleBar defaultToggled={this.state.toggledTab} handleToggle={(state) => this.handleToggle(state)}/>
+                    </section>
                     <section className="main-content">
                         <aside className="side content">
                             <div className="social">Left Content</div>
                         </aside>
                         <div className="center content">
-                            <MainBody />
+                            <MainBody toggledState={this.state.toggledTab} />
                         </div>
                         <aside className="side content">Right Content</aside>
                     </section>
