@@ -26,6 +26,7 @@ const ToggleStyle = {
 
 const ToggleBar = (props) => (
     <Paper style={Paperstyle} zDepth={2}>
+        <section className="toggle">
         <Toggle
             defaultToggled={props.defaultToggled}
             style={ToggleStyle}
@@ -39,7 +40,7 @@ const ToggleBar = (props) => (
             style={{ 'float': 'right' }}
             color={'white'}
             hoverColor={'#00FFFF'} />
-
+        </section>
     </Paper>
 )
 

@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+
+import { setActiveTab } from '../../actions/navbar.js'
+import { connect } from 'react-redux';
+
 import Navbar from './BottomNav.jsx';
 
 //Imports Icons For Navbar
@@ -8,11 +12,6 @@ import SnapchatIcon from '../../Icons/SnapchatIcon.jsx';
 import AllIcon from '../../Icons/AllIcon.jsx';
 
 import { INSTAGRAM_TAB_ID, SNAPCHAT_TAB_ID, ALL_TAB_ID } from '../../constants/index.js';
-
-
-
-import { setActiveTab } from '../../actions/navbar.js'
-import { connect } from 'react-redux';
 
 class HOCNavbar extends Component {
 

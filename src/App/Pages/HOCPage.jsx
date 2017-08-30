@@ -6,8 +6,7 @@ import { connect } from 'react-redux';
 class HOCPage extends Component {
 
     constructor(props){
-        super(props);
-        console.log(props.id)
+        super(props);        
     }
     componentDidMount(){
         this.props.setActiveTab(this.props.id);

@@ -4,8 +4,8 @@ import SnapchatProfile from '../Components/Profiles/SnapchatProfile.jsx';
 
 class SnapchatProfiles extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             "snapchats": [
@@ -242,10 +242,13 @@ class SnapchatProfiles extends Component {
     }
 
     render() {
+        
         return (
             <div>
-                <SnapchatProfile info = {this.state.snapchats[0]}/>
-                
+                <SnapchatProfile toggled={this.props.toggled} user = {this.state.snapchats[0]}/>
+                <SnapchatProfile toggled={this.props.toggled} user = {this.state.snapchats[1]}/>
+                <SnapchatProfile toggled={this.props.toggled} user = {this.state.snapchats[2]}/>
+                <SnapchatProfile toggled={this.props.toggled} user = {this.state.snapchats[3]}/>                
             </div>
         );
     }
