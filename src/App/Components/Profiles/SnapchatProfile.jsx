@@ -22,7 +22,7 @@ class SnapchatProfile extends Component {
         this.state = {
             expanded:props.toggled
         }
-        this.handleExpand = this.handleExpand.bind(this);
+        this.handleExpand = this.handleExpand.bind(this);        
         
     }
 

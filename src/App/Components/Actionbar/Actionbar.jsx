@@ -11,11 +11,12 @@ const RightButton = (props) => ( <FloatingActionButton onTouchTap={props.onTouch
 class ActionBar extends Component{
 
     constructor(props){
-        super(props);        
+        super(props);  
     }
 
     handleLeftButtonTap(){
         console.log("LEFT BUTTON PRESSED")
+        this.props.handleOpenFilterDrawer();
     }
 
     handleRightButtonTap(){

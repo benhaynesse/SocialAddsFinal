@@ -31,13 +31,20 @@ class App extends Component {
     constructor() {
         super(); 
         this.state = {
-            toggledTab:true
+            toggledTab:true,
+            filterDrawerOpen:false
         }
     }
 
     selectTab(index) {
         this.setState({
             selectedIndex: index
+        })
+    }
+
+    handleDrawer(){
+        this.setState({
+            filterDrawerOpen:!this.state.filterDrawerOpen
         })
     }
 
@@ -49,12 +56,12 @@ class App extends Component {
 
 
 
-    render() {
+    render() {        
         return (
             <BrowserRouter>
                 <div className="app">
                     <header className="action-bar">
-                        <ActionBar />
+                        <ActionBar handleOpenFilterDrawer={() => this.handleDrawer()} filterDrawState={this.state.filterDrawerOpen} />
                     </header>
                     <section className="toggle-bar">
                         <ToggleBar defaultToggled={this.state.toggledTab} handleToggle={(state) => this.handleToggle(state)}/>
@@ -64,7 +71,7 @@ class App extends Component {
                             <div className="social">Left Content</div>
                         </aside>
                         <div className="center content">
-                            <MainBody toggledState={this.state.toggledTab} />
+                            <MainBody toggleDraw={()=>this.handleDrawer()} draw={this.state.filterDrawerOpen} toggledState={this.state.toggledTab} />
                         </div>
                         <aside className="side content">Right Content</aside>
                     </section>

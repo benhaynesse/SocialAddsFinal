@@ -19,8 +19,9 @@ const HOCRoute = ({ component, ...rest }) => {
         return (
             <Route {...rest} render={routeProps => {         
                 let props = {toggled:rest.toggled}   
-                return <HOCPage {...rest}>{ React.createElement(component,props)}</HOCPage>
-            }} />
+                console.log({...rest})
+                return <HOCPage {...rest} >{ React.createElement(component, props)}</HOCPage>
+            }} /> 
         );
     }
 
@@ -34,11 +35,11 @@ class MainBody extends Component {
         let props = this.props;
         return (
             <Switch>
-                <HOCRoute toggled={props.toggledState} id={ALL_TAB_ID} path="/" exact component={AllProfiles} />
-                <HOCRoute toggled={props.toggledState} id={ALL_TAB_ID} path="/all" component={AllProfiles} />
-                <HOCRoute toggled={props.toggledState} id={SNAPCHAT_TAB_ID} path="/snapchat" component={SnapchatProfiles} />
-                <HOCRoute id={INSTAGRAM_TAB_ID} path="/instagram" component={InstagramProfiles} />
-                <Route path="/tin" component={Profile}/>
+                <HOCRoute {...props} toggled={props.toggledState} id={ALL_TAB_ID} path="/" exact component={AllProfiles} />
+                <HOCRoute {...props} toggled={props.toggledState} id={ALL_TAB_ID} path="/all" component={AllProfiles} />
+                <HOCRoute {...props} toggled={props.toggledState} id={SNAPCHAT_TAB_ID} path="/snapchat" component={SnapchatProfiles} />
+                <HOCRoute {...props} id={INSTAGRAM_TAB_ID} path="/instagram" component={InstagramProfiles} />
+                <Route id={-20} path="/tin" component={Profile}/>
                 <Route path="*" component={NotFoundPage} />
             </Switch>
         );

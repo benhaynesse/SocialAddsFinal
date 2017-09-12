@@ -37,19 +37,34 @@ class HOCNavbar extends Component {
                 id: INSTAGRAM_TAB_ID
             }
         ]
+
+        
+
+        
     }
 
     selectTab(index){        
         this.props.setActiveTab(index);
     }
 
+    
+
     render() {
+        
         let props = this.props;
+        let navbar = null;
+        if(this.props.selectedIndex >= 0){
+            navbar = <Navbar
+            items={this.navItems} selectedIndex={props.selectedIndex}
+            selectTab={(index) => this.selectTab(index)}>
+        </Navbar>
+        }else{
+           
+        }
+
         return (
-            <Navbar
-                items={this.navItems} selectedIndex={props.selectedIndex}
-                selectTab={(index) => this.selectTab(index)}>
-            </Navbar>
+            <div>{navbar}</div>
+            
         )
     }
 }
