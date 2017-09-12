@@ -3,8 +3,10 @@
 * {
     box-sizing: border-box;
     color: white;
-    font-family: 'Roboto', serif
+    font-family: 'Roboto', serif;
+    text-decoration:none;    
 }
+
 
 $actionbar-height: 64px;
 $navbar-height: 64px;
@@ -31,6 +33,9 @@ body,
     min-height: $actionbar-height;
     height: $actionbar-height;
     max-height: $actionbar-height;
+    span{
+        color:#70A4F2;
+    }
 }
 
 // .nav-bar {

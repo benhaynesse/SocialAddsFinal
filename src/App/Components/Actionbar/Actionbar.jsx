@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 
+import { setActiveTab } from '../../actions/navbar'
+import { connect } from 'react-redux';
+
+import {ALL_TAB_ID } from '../../constants/index';
+
 import AppBar from 'material-ui/AppBar';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
+
+import { NavLink } from 'react-router-dom'
 
 
 const RightButton = (props) => ( <FloatingActionButton onTouchTap={props.onTouchTap} mini> <ContentAdd/> </FloatingActionButton>     );
@@ -12,6 +19,7 @@ class ActionBar extends Component{
 
     constructor(props){
         super(props);  
+        console.log("ACTInIBAR",props)
     }
 
     handleLeftButtonTap(){
@@ -24,7 +32,7 @@ class ActionBar extends Component{
     }
 
     handleTitleButtonTap(){
-        console.log("TITLE PRESSED")
+        this.props.setActiveTab(ALL_TAB_ID);
     }
 
     
@@ -43,7 +51,7 @@ class ActionBar extends Component{
 
 
                 //Set the Title
-                title={"Logo!!"}
+                title={<NavLink to={'/'}><span>Logo!!</span></NavLink>}
                 //Set the right icon button
                 iconElementRight={<RightButton onTouchTap={() => this.handleRightButtonTap()}/>}
 
@@ -56,4 +64,4 @@ class ActionBar extends Component{
     }
 }
 
-export default ActionBar;
+export default connect(null, {setActiveTab})(ActionBar);

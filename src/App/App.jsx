@@ -4,10 +4,6 @@ import React, { Component } from 'react';
 
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
-
-
-
-
 import HOCNavbar from './Components/Navbar/HOCNavbar.jsx';
 
 import ToggleBar from './Components/Togglebar/Togglebar.jsx';
@@ -31,7 +27,7 @@ class App extends Component {
     constructor() {
         super(); 
         this.state = {
-            toggledTab:true,
+            toggledTab:false,
             filterDrawerOpen:false
         }
     }

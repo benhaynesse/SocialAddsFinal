@@ -20,7 +20,7 @@ class CheckboxGroup extends Component {
         
         return (
 
-            <List className="lll" style={{width:'90%'}}>
+            <List style={{width:'80%'}}>
                 <ListItem
                     primaryText={props.label}
                 />
