@@ -4,6 +4,10 @@ import React, { Component } from 'react';
 import Avatar from 'material-ui/Avatar';
 import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
 
+import { NavLink } from 'react-router-dom'
+
+
+import ProfilePage from '../../Pages/ProfilePage.jsx';
 
 
 
@@ -19,10 +23,15 @@ class SnapchatProfile extends Component {
             expanded:props.toggled
         }
         this.handleExpand = this.handleExpand.bind(this);
+        
     }
 
     handleExpand() {
         this.setState({ expanded: !this.state.expanded })
+    }
+
+    handleImageClick(){
+        console.log("TESXT");
     }
 
     componentWillReceiveProps(nextProps) {
@@ -43,8 +52,8 @@ class SnapchatProfile extends Component {
                     titleStyle={{ flex: 1 }}
                     subtitle={user.headline}
                     subtitleStyle={{ paddingTop: 2, flex: 1 }}
-                    avatar={<Avatar src={user.imageUrl} style={{ border: user.gender === 'M' ? '2px solid aqua' : '2px solid pink' }} />}
-                    actAsExpander={true}
+                    avatar={<NavLink to={`/tin?${user.username}`}><Avatar src={user.imageUrl} style={{ border: user.gender === 'M' ? '2px solid aqua' : '2px solid pink' }} /></NavLink>}
+                    
                     showExpandableButton={true}
                     
                 />

@@ -1,9 +1,10 @@
 
 
 .card{  
-    background:rgba(204, 204, 204,0.2) !important;
-    margin-bottom:5px;
+    background:rgba(204, 204, 204,0.2) !important;    
     padding-bottom: 10px;
+    max-width:400px;    
+    margin:0 auto 5px auto;
 }
 
 .card-header{
@@ -19,8 +20,7 @@
     h4{
         font-size:1.0em;
         padding:5px;
-    }
-    
+    }    
 
      .card-info-like{        
         position:absolute;
