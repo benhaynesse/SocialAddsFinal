@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 
 import FilterDraw from '../Components/Drawers/FilterDraw.jsx';
 
+import AddDraw from '../Components/Drawers/AddDraw.jsx';
+
 
 
 class HOCPage extends Component {
@@ -19,7 +21,7 @@ class HOCPage extends Component {
     render() {
         return (
             <div>
-                <FilterDraw toggleDraw={this.props.toggleDraw} drawState={this.props.draw}/>
+                <AddDraw toggleDraw={this.props.toggleDraw} drawState={this.props.draw}/>
                 {this.props.children}
                 
             </div>

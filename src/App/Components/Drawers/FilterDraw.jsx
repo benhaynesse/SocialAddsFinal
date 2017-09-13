@@ -3,10 +3,11 @@ import React, { Component } from 'react';
 import Drawer from 'material-ui/Drawer';
 
 import FloatingActionButton from 'material-ui/FloatingActionButton';
+import CloseIcon from '../../Icons/CloseIcon.jsx';
 
 import CheckBoxGroup from '../CheckboxGroups/CheckboxGroup.jsx';
 
-import CloseIcon from '../../Icons/CloseIcon.jsx';
+
 import FlatButton from 'material-ui/FlatButton';
 
 class FilterDrawer extends Component {
@@ -99,7 +100,7 @@ class FilterDrawer extends Component {
                 <FloatingActionButton mini style={{ 'float': 'right' }} onTouchTap={this.props.toggleDraw}>
                     <CloseIcon color='white'/>
                 </FloatingActionButton>
-                
+
                 {filters}
 
                 <FlatButton onClick={()=>this.handleUpdate()} backgroundColor={'#111'} labelStyle={{color:'#70A4F2', fontWeight:'bold'}} label="Find Users" fullWidth={true} />

@@ -1,0 +1,48 @@
+.add-profile-draw{
+    width:80%!important;
+    
+    
+    
+
+    
+}
+
+
+
+.add-profile-form{
+    width:90%;
+
+    .form-control{
+        margin:5px;
+        display:flex;
+        flex-direction: row;
+        .textIcon{   
+            margin:5px;
+            margin-top:28px;
+            position: relative;     
+            align-self: center;  
+            width:24px;            
+            font-size: 16pt;
+            
+        }
+
+        div{            
+            flex:1;
+        }
+
+    }
+
+    .gender-control{
+        border:2px solid aqua;
+    }
+  
+
+    
+   
+    
+    
+}
+
+
+
+

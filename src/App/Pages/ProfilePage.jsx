@@ -34,9 +34,7 @@ class ProfilePage extends Component {
                 <FloatingActionButton mini={true} onClick={()=>this.handleBack()}>
                     <ContentAdd />
                 </FloatingActionButton>
-                <h4>WELCOME {this.username}</h4>
-               
-                
+                <h4>WELCOME {this.username}</h4>    
 
             </div>
         );
