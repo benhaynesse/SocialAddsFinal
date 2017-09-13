@@ -7,6 +7,8 @@ import FilterDraw from '../Components/Drawers/FilterDraw.jsx';
 
 
 
+
+
 class HOCPage extends Component {
 
     constructor(props) {
