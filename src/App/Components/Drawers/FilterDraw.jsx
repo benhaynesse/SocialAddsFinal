@@ -91,10 +91,10 @@ class FilterDrawer extends Component {
         })
         return (
             <Drawer
-                containerStyle={{marginTop:'10px', transition: 'all cubic-bezier(0.23, 1, 0.32, 1)', transitionDuration: '1s', background: 'black', 'opacity': 0.91 }}
+                containerStyle={{transition: 'all cubic-bezier(0.23, 1, 0.32, 1)', transitionDuration: '1s', background: 'black', 'opacity': 0.91 }}
                 docked={false}
                 onRequestChange={this.props.toggleDraw}
-                width={'20%'}
+                width={200}
                 open={this.props.drawState}
             >
                 <FloatingActionButton mini style={{ 'float': 'right' }} onTouchTap={this.props.toggleDraw}>

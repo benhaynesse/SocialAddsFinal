@@ -1,5 +1,7 @@
 .add-profile-draw{
     width:80%!important;
+
+    overflow-y: auto;
     
     
     
@@ -29,12 +31,20 @@
         div{            
             flex:1;
         }
+        
+        .miTest div div div{
+            color:pink!important;
+        }
+        
 
     }
 
     .gender-control{
         border:2px solid aqua;
+
     }
+
+    
   
 
     
